@@ -2,11 +2,11 @@ import requests
 import pprint
 
 params = {
-    'q' : 'html'
+    'q' : 'Language: html'
 }
-response = requests.get('https://api.github.com/', params = params)
+response = requests.get('https://api.github.com/search/repositories', params = params)
 
-response_json = response.json()
+print(f'Status code: {response.status_code}')
 
 pprint.pprint(response.json())
 
